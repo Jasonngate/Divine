@@ -22,9 +22,9 @@ export default function AdminLoginPage() {
     setError("");
 
     try {
-      console.log("Attempting login to:", `${API_BASE_URL}/api/auth/login`);
+      console.log("Attempting login to:", `${API_BASE_URL}/auth/login`);
       
-      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+      const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
