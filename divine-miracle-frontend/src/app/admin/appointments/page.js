@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { LogOut, Calendar, User, Clock, Mail, Phone, MessageCircle, RefreshCw } from "lucide-react";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://localhost:5000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 export default function AdminAppointmentsPage() {
   const [appointments, setAppointments] = useState([]);
@@ -60,7 +60,7 @@ export default function AdminAppointmentsPage() {
     try {
       console.log("Fetching appointments with token:", token);
       
-      const res = await fetch(`${API_BASE_URL}/api/appointments`, {
+      const res = await fetch(`${API_BASE_URL}/appointments`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -103,7 +103,7 @@ export default function AdminAppointmentsPage() {
     const token = localStorage.getItem("adminToken");
     
     try {
-      const res = await fetch(`${API_BASE_URL}/api/appointments/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/appointments/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -136,7 +136,7 @@ export default function AdminAppointmentsPage() {
     setError(""); // Clear any existing errors
     
     try {
-      const res = await fetch(`${API_BASE_URL}/api/appointments/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/appointments/${id}`, {
         method: "DELETE",
         headers: {
           'Authorization': `Bearer ${token}`,
