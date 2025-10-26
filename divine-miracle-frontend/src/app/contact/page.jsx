@@ -52,7 +52,7 @@ export default function ContactPage() {
     setSuccess("");
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/appointments`, {
+      const res = await fetch(`${API_BASE_URL}/appointments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
