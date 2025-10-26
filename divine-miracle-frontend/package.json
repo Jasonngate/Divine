@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "vercel-build": "npm install && next build --turbopack"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
