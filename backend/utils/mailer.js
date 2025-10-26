@@ -1,24 +1,26 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+// Initialize Resend client
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendMail = async (options) => {
-  console.log("📧 Using user:", process.env.EMAIL_USER);
-  console.log("📧 Pass loaded:", process.env.EMAIL_PASS ? "yes ✅" : "no ❌");
-
-  // Create transporter INSIDE the function to ensure env vars are loaded
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+  console.log("📧 Using Resend API...");
+  console.log("📧 Key loaded:", process.env.RESEND_API_KEY ? "yes ✅" : "no ❌");
 
   try {
-    const info = await transporter.sendMail(options);
-    console.log("✅ Email sent:", info.response);
-    return info;
+    const { from, to, subject, html } = options;
+
+    const data = await resend.emails.send({
+      from: from || "Divine Miracle <noreply@divinemiracle.com>",
+      to,
+      subject,
+      html,
+    });
+
+    console.log("✅ Email sent successfully:", data?.id || data);
+    return data;
   } catch (err) {
-    console.error("❌ Email Error:", err);
-    throw err; // Important: re-throw the error
+    console.error("❌ Email sending failed via Resend:", err.message);
+    throw err;
   }
 };
