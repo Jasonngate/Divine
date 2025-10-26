@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/about/page": "/about",
-  "/admin/appointments/page": "/admin/appointments",
-  "/appointment/page": "/appointment",
   "/admin/login/page": "/admin/login",
+  "/admin/appointments/page": "/admin/appointments",
+  "/about/page": "/about",
   "/booksession/page": "/booksession",
+  "/appointment/page": "/appointment",
   "/contact/page": "/contact",
-  "/page": "/",
   "/gallery/page": "/gallery",
+  "/page": "/",
   "/services/page": "/services",
   "/testimonials/page": "/testimonials"
 }

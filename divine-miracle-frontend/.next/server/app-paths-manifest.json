@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/about/page": "app/about/page.js",
-  "/admin/appointments/page": "app/admin/appointments/page.js",
-  "/appointment/page": "app/appointment/page.js",
   "/admin/login/page": "app/admin/login/page.js",
+  "/admin/appointments/page": "app/admin/appointments/page.js",
+  "/about/page": "app/about/page.js",
   "/booksession/page": "app/booksession/page.js",
+  "/appointment/page": "app/appointment/page.js",
   "/contact/page": "app/contact/page.js",
-  "/page": "app/page.js",
   "/gallery/page": "app/gallery/page.js",
+  "/page": "app/page.js",
   "/services/page": "app/services/page.js",
   "/testimonials/page": "app/testimonials/page.js"
 }
