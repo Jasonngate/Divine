@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 
 // Notify admin
 await sendMail({
-  from: "Divine Miracle <noreply@divinemiracle.com>", // or your verified sender email
+  from: "Divine Miracle <onboarding@resend.dev>", // or your verified sender email
   to: process.env.ADMIN_EMAIL,
   subject: `📅 New Appointment from ${appt.fullName}`,
   html: `
