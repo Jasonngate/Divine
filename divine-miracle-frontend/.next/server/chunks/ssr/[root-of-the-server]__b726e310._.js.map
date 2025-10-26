@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/91937/Desktop/Astro/divine-miracle-frontend/src/app/appointment/page.js"],"sourcesContent":["\r\n\r\nexport default function AppointmentPage() {\r\n   <ContactUs />\r\n}\r\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;kBACrB,mSAAC;;;;;AACJ","debugId":null}}]
+}

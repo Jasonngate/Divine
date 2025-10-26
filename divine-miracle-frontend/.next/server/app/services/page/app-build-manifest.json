@@ -1,0 +1,23 @@
+{
+  "pages": {
+    "/services/page": [
+      "static/chunks/022d5_next_dist_241488b1._.js",
+      "static/chunks/OneDrive_Desktop_Astro_divine-miracle-frontend_src_app_favicon_ico_mjs_a537ef3e._.js",
+      "static/chunks/[root-of-the-server]__7ea54400._.css",
+      "static/chunks/OneDrive_Desktop_Astro_divine-miracle-frontend_src_components_bb936b31._.js",
+      "static/chunks/022d5_f412cbbd._.js",
+      "static/chunks/OneDrive_Desktop_Astro_divine-miracle-frontend_src_app_layout_d5c032f4.js",
+      "static/chunks/022d5_next_dist_client_components_builtin_global-error_dad9cde3.js",
+      "static/chunks/13466_Desktop_Astro_divine-miracle-frontend_src_app_services_page_jsx_dad9cde3._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_84bd1955._.js",
+      "static/chunks/022d5_next_dist_compiled_react-dom_92a2bf50._.js",
+      "static/chunks/022d5_next_dist_compiled_next-devtools_index_93c6121a.js",
+      "static/chunks/022d5_next_dist_compiled_30ec1c9a._.js",
+      "static/chunks/022d5_next_dist_client_10e90486._.js",
+      "static/chunks/022d5_next_dist_8ebf474c._.js",
+      "static/chunks/022d5_@swc_helpers_cjs_5336f1cd._.js",
+      "static/chunks/OneDrive_Desktop_Astro_divine-miracle-frontend_a0ff3932._.js",
+      "static/chunks/turbopack-OneDrive_Desktop_Astro_divine-miracle-frontend_f1462c92._.js"
+    ]
+  }
+}

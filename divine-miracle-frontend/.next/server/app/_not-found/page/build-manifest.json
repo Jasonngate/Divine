@@ -1,0 +1,21 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/7a6a6_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd0edba6._.js",
+    "static/chunks/7a6a6_next_dist_compiled_react-dom_4ae3e5c7._.js",
+    "static/chunks/7a6a6_next_dist_compiled_next-devtools_index_9e3bee56.js",
+    "static/chunks/7a6a6_next_dist_compiled_dc8c4d86._.js",
+    "static/chunks/7a6a6_next_dist_client_66515ccc._.js",
+    "static/chunks/7a6a6_next_dist_c503d586._.js",
+    "static/chunks/7a6a6_@swc_helpers_cjs_fe13b415._.js",
+    "static/chunks/Desktop_Astro (1)_Astro_divine-miracle-frontend_a0ff3932._.js",
+    "static/chunks/turbopack-Desktop_Astro (1)_Astro_divine-miracle-frontend_56b2dd82._.js"
+  ],
+  "pages": {},
+  "ampFirstPages": []
+}

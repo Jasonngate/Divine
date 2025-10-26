@@ -1,0 +1,11 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/auth/[...nextauth]/route.js")
+R.c("server/chunks/2d6e6_next_554e75f5._.js")
+R.c("server/chunks/node_modules_@opentelemetry_api_build_esm_7e8f41ca._.js")
+R.c("server/chunks/2d6e6_next-auth_32225bb7._.js")
+R.c("server/chunks/2d6e6_openid-client_51809eda._.js")
+R.c("server/chunks/2d6e6_jose_dist_node_cjs_82bb6ba2._.js")
+R.c("server/chunks/2d6e6_d618a549._.js")
+R.c("server/chunks/[root-of-the-server]__909e6594._.js")
+R.m("[project]/Desktop/Astro/divine-miracle-frontend/.next-internal/server/app/api/auth/[...nextauth]/route/actions.js [app-rsc] (server actions loader, ecmascript)")
+R.m("[project]/Desktop/Astro/divine-miracle-frontend/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Desktop/Astro/divine-miracle-frontend/src/app/api/auth/[...nextauth]/route.js [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/Desktop/Astro/divine-miracle-frontend/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/Desktop/Astro/divine-miracle-frontend/src/app/api/auth/[...nextauth]/route.js [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

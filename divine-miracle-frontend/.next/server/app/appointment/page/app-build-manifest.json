@@ -1,0 +1,24 @@
+{
+  "pages": {
+    "/appointment/page": [
+      "static/chunks/2d6e6_next_dist_2137223c._.js",
+      "static/chunks/Desktop_Astro_divine-miracle-frontend_src_app_favicon_ico_mjs_6419989f._.js",
+      "static/chunks/[root-of-the-server]__1c018df0._.css",
+      "static/chunks/Desktop_Astro_divine-miracle-frontend_45530861._.js",
+      "static/chunks/Desktop_Astro_divine-miracle-frontend_src_app_layout_3719406d.js",
+      "static/chunks/2d6e6_next_dist_client_components_builtin_global-error_ebad0dda.js",
+      "static/chunks/2d6e6_86c103ef._.js",
+      "static/chunks/Desktop_Astro_divine-miracle-frontend_src_components_ContactUs_jsx_7e30ab12._.js",
+      "static/chunks/Desktop_Astro_divine-miracle-frontend_src_app_appointment_page_ebad0dda.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_bb668153._.js",
+      "static/chunks/2d6e6_next_dist_compiled_react-dom_3ba20bca._.js",
+      "static/chunks/2d6e6_next_dist_compiled_next-devtools_index_1b00c6e3.js",
+      "static/chunks/2d6e6_next_dist_compiled_600921eb._.js",
+      "static/chunks/2d6e6_next_dist_client_d03092a7._.js",
+      "static/chunks/2d6e6_next_dist_123b1177._.js",
+      "static/chunks/2d6e6_@swc_helpers_cjs_ff3ce109._.js",
+      "static/chunks/Desktop_Astro_divine-miracle-frontend_a0ff3932._.js",
+      "static/chunks/turbopack-Desktop_Astro_divine-miracle-frontend_3853fe30._.js"
+    ]
+  }
+}
