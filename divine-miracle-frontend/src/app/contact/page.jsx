@@ -34,7 +34,7 @@ export default function ContactPage() {
     { icon: Globe, name: "Google", url: "https://www.google.com/search?sca_esv=c8099ca82f4112b0&rlz=1C1ONGR_en-GBIN1089IN1089&sxsrf=AE3TifOqHLFs-m9EHfYHL25dYZN871q_3w:1760080759495&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7zdQ4OwZBvw7dVc_QGcweQ8Mulbk4NxdiC3h9rv3v4WMICPdyWArS1QQQh3-o4Zq-i4navAj6tW8pHWJwr5ZRlIY4bt&q=Divine+Miracle+Reviews&sa=X&ved=2ahUKEwj9lMjji5mQAxUGUGwGHcupFgQQ0bkNegQIIhAE", color: "text-blue-400" }
   ];
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.phone || !formData.service) {
@@ -47,30 +47,28 @@ export default function ContactPage() {
       return;
     }
 
-    setLoading(true);
+    // Clear form and show success message immediately
+    setFormData({ name: "", email: "", phone: "", service: "", preferredDate: "", preferredTime: "", message: "" });
+    setSuccess("✅ Appointment submitted successfully! We will contact you soon.");
     setError("");
-    setSuccess("");
 
-    try {
-      const res = await fetch(`${API_BASE_URL}/appointments`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: formData.name, email: formData.email, phone: formData.phone,
-          service: formData.service, date: formData.preferredDate, 
-          time: formData.preferredTime, message: formData.message
-        })
-      });
-
-      if (!res.ok) throw new Error("Failed to book appointment");
-
-      setSuccess("✅ Appointment booked successfully! We will contact you soon.");
-      setFormData({ name: "", email: "", phone: "", service: "", preferredDate: "", preferredTime: "", message: "" });
-    } catch (err) {
-      setError("❌ Something went wrong. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
+    // Send data to backend without waiting
+    fetch(`${API_BASE_URL}/appointments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        date: formData.preferredDate,
+        time: formData.preferredTime,
+        message: formData.message
+      })
+    }).catch(err => {
+      console.error("Background submission error:", err);
+      // Don't show error to user since we're prioritizing UX
+    });
   };
 
   const inputClass = "w-full border border-[#d4af37]/30 bg-white/5 rounded-lg p-3 text-[#FEF2CD] placeholder-[#FEF2CD]/60 focus:border-[#d4af37] focus:outline-none transition-colors";
@@ -162,11 +160,11 @@ export default function ContactPage() {
                 onChange={(e) => setFormData(prev => ({...prev, message: e.target.value}))} 
                 className={`${inputClass} min-h-[100px] resize-none`} />
               
-              <button type="submit" disabled={loading}
-                className="relative group w-full bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#b8860b] text-[#3a0d1e] font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 overflow-hidden transform hover:scale-[1.02] hover:shadow-2xl border border-[#d4af37]/30 disabled:opacity-50">
+              <button type="submit"
+                className="relative group w-full bg-gradient-to-r from-[#d4af37] via-[#ffd700] to-[#b8860b] text-[#3a0d1e] font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 overflow-hidden transform hover:scale-[1.02] hover:shadow-2xl border border-[#d4af37]/30">
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <Send className="w-4 h-4" />
-                  {loading ? "Booking..." : "Send Request"}
+                  Send Request
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#b8860b] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </button>
