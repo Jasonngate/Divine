@@ -20,16 +20,6 @@ const Services = () => {
       <div className='mt-5 min-h-screen h-1/2 flex items-center justify-center'>
         <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 md:p-8 p-4'>
           <ServiceCard
-            title="Spells"
-            description="Experience profound relaxation and healing through universal life force energy."
-            includedServices={[
-              "Stress reduction",
-              "Emotional balance",
-              "Chakra healing",
-              "Physical rejuvenation"
-            ]}
-          />
-          <ServiceCard
             title="Tarot Reading"
             description="Unveil the mysteries of your past, present, and future through the ancient wisdom of tarot cards. Each reading provides deep insights into your life's journey."
             includedServices={[
@@ -39,34 +29,14 @@ const Services = () => {
               "Career insights"
             ]}
           />
-            <ServiceCard
-              title="Angel Healing"
-              description="Connect with divine energies for deep emotional, mental, and spiritual healing."
-              includedServices={[
-                "Energy balancing",
-                "Chakra alignment",
-                "Aura cleansing",
-                "Emotional release"
-              ]}
-            />
-            <ServiceCard
-              title="Vastu Consultation"
-              description="Transform your home or workspace into a space of harmony, peace, and prosperity."
-              includedServices={[
-                "Site evaluation",
-                "Room arrangement",
-                "Energy flow optimization",
-                "Remedial solutions"
-              ]}
-            />
           <ServiceCard
-            title="Astrology Reading"
-            description="Gain clarity about your future and align with cosmic energies through personalized astrology sessions."
+            title="Mobile Numerology"
+            description="Understand how your mobile number influences your success, communication, and daily energy. Align your number with positivity, growth, and balance."
             includedServices={[
-              "Birth chart analysis",
-              "Future predictions",
-              "Compatibility check",
-              "Life path guidance"
+              "Number vibration analysis",
+              "Destiny & growth insights",
+              "Relationship compatibility",
+              "Career direction"  
             ]}
           />
           <ServiceCard
@@ -79,6 +49,47 @@ const Services = () => {
               "Career path guidance"
             ]}
           />
+          <ServiceCard
+              title="Healings"
+              description="Connect with divine energies for deep emotional, mental, and spiritual healing."
+              includedServices={[
+                "Energy balancing",
+                "Chakra alignment",
+                "Aura cleansing",
+                "Emotional release"
+              ]}
+            />
+          <ServiceCard
+            title="Spells"
+            description="Experience profound relaxation and healing through universal life force energy."
+            includedServices={[
+              "Stress reduction",
+              "Emotional balance",
+              "Chakra healing",
+              "Physical rejuvenation"
+            ]}
+          />
+            <ServiceCard
+              title="Vastu"
+              description="Transform your home or workspace into a space of harmony, peace, and prosperity."
+              includedServices={[
+                "Site evaluation",
+                "Room arrangement",
+                "Energy flow optimization",
+                "Remedial solutions"
+              ]}
+            />
+          <ServiceCard
+            title="Astrology"
+            description="Gain clarity about your future and align with cosmic energies through personalized astrology sessions."
+            includedServices={[
+              "Birth chart analysis",
+              "Future predictions",
+              "Compatibility check",
+              "Life path guidance"
+            ]}
+          />
+          
         </div>
       </div>
 

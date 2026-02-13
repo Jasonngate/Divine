@@ -9,7 +9,8 @@ import {
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "", email: "", phone: "", service: "",
-    preferredDate: "", preferredTime: "", message: ""
+    preferredDate: "", preferredTime: "", message: "",
+    pastExperience: "", heardFrom: "", purpose: ""
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
@@ -17,14 +18,14 @@ export default function ContactPage() {
 
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
   
-  const services = ["Tarot Reading", "Numerology", "Angel Healing", "Vastu", "Astrology", "Spells"];
+  const services = ["Tarot Reading", "Mobile Numerology", "Numerology", "Healings", "Spells", "Vastu", "Astrology"];
   const timeSlots = ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM"];
 
   const contactInfo = [
     { icon: MapPin, label: "Location", value: "311, Ground Floor, Raghuleela Mega Mall, near Poisar Depot,Jai Bhim Sanjay Nagar,Kandivali West,Mumbai, Maharashtra 400067" , link: "https://www.google.com/maps/place/Divine+Miracle/@19.2140312,72.8488939,17z/data=!3m1!5s0x3be7b7ca0312f959:0x1cd27381cdac6e65!4m14!1m7!3m6!1s0x3be7b7268e057ac5:0x90bff264e35fad0c!2sDivine+Miracle!8m2!3d19.2140312!4d72.8488939!16s%2Fg%2F11tnbx_585!3m5!1s0x3be7b7268e057ac5:0x90bff264e35fad0c!8m2!3d19.2140312!4d72.8488939!16s%2Fg%2F11tnbx_585?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D" },
     { icon: Phone, label: "Phone", value: "+91 91369 13355", link: "tel:+919136913355" },
     { icon: Mail, label: "Email", value: "369divinemiracle@gmail.com", link: "mailto:369divinemiracle@gmail.com" },
-    { icon: Clock, label: "Hours", value: "Mon-Sat: 10 AM - 8 PM" }
+    { icon: Clock, label: "Hours", value: "Mon-Sat: 12 PM - 6 PM" }
   ];
 
   const socialLinks = [
@@ -48,7 +49,7 @@ export default function ContactPage() {
     }
 
     // Clear form and show success message immediately
-    setFormData({ name: "", email: "", phone: "", service: "", preferredDate: "", preferredTime: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", service: "", preferredDate: "", preferredTime: "", message: "", pastExperience: "", heardFrom: "", purpose: "" });
     setSuccess("✅ Appointment submitted successfully! We will contact you soon.");
     setError("");
 
@@ -63,7 +64,10 @@ export default function ContactPage() {
         service: formData.service,
         date: formData.preferredDate,
         time: formData.preferredTime,
-        message: formData.message
+        message: formData.message,
+        pastExperience: formData.pastExperience,
+        heardFrom: formData.heardFrom,
+        purpose: formData.purpose
       })
     }).catch(err => {
       console.error("Background submission error:", err);
@@ -119,7 +123,7 @@ export default function ContactPage() {
                 <select value={formData.service} 
                   onChange={(e) => setFormData(prev => ({...prev, service: e.target.value}))} 
                   className={`${inputClass} pr-10 appearance-none`} required>
-                  <option value="" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Select Service *</option>
+                  <option value="" disabled hidden className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Select Service *</option>
                   {services.map((service, index) => (
                     <option key={service} value={service} className={`bg-[#2a0015] text-[#FEF2CD] py-2 ${index < services.length - 1 ? 'border-b border-[#d4af37]/20' : ''}`}>
                       {service}
@@ -141,7 +145,7 @@ export default function ContactPage() {
                   <select value={formData.preferredTime} 
                     onChange={(e) => setFormData(prev => ({...prev, preferredTime: e.target.value}))} 
                     className={`${inputClass} pr-10 appearance-none`}>
-                    <option value="" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Select Time</option>
+                    <option value="" disabled hidden className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Select Time</option>
                     {timeSlots.map((time, index) => (
                       <option key={time} value={time} className={`bg-[#2a0015] text-[#FEF2CD] py-2 ${index < timeSlots.length - 1 ? 'border-b border-[#d4af37]/20' : ''}`}>
                         {time}
@@ -153,6 +157,55 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <select value={formData.pastExperience} 
+                  onChange={(e) => setFormData(prev => ({...prev, pastExperience: e.target.value}))} 
+                  className={`${inputClass} pr-10 appearance-none`}>
+                  <option value="" disabled hidden className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Have you used similar services before?</option>
+                  <option value="Yes" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Yes</option>
+                  <option value="No" className="bg-[#2a0015] text-[#FEF2CD] py-2">No</option>
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg className="w-4 h-4 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <select value={formData.heardFrom} 
+                  onChange={(e) => setFormData(prev => ({...prev, heardFrom: e.target.value}))} 
+                  className={`${inputClass} pr-10 appearance-none`}>
+                  <option value="" disabled hidden className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">How did you hear about us?</option>
+                  <option value="Google" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Google</option>
+                  <option value="Instagram" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Instagram</option>
+                  <option value="Facebook" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Facebook</option>
+                  <option value="WhatsApp" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">WhatsApp</option>
+                  <option value="Friend/Family" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">Friend/Family</option>
+                  <option value="Other" className="bg-[#2a0015] text-[#FEF2CD] py-2">Other</option>
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg className="w-4 h-4 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <select value={formData.purpose} 
+                  onChange={(e) => setFormData(prev => ({...prev, purpose: e.target.value}))} 
+                  className={`${inputClass} pr-10 appearance-none`}>
+                  <option value="" disabled hidden className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">What are you looking for today?</option>
+                  <option value="Want a Service" className="bg-[#2a0015] text-[#FEF2CD] py-2 border-b border-[#d4af37]/20">I want a Service</option>
+                  <option value="Want to Learn" className="bg-[#2a0015] text-[#FEF2CD] py-2">I want to Learn</option>
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg className="w-4 h-4 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
               </div>
               

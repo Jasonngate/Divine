@@ -28,15 +28,15 @@ const SacredGallery = () => {
     '/spells/1.jpeg',
     '/spells/2.jpeg',
     // '/spells/3.jpeg',
-    '/spells/4.jpeg',
+    // '/spells/4.jpeg',
     '/spells/5.jpeg',
-    '/spells/6.jpeg',
-    '/spells/7.jpeg',
-    '/spells/8.jpeg',
-    '/spells/9.jpeg',
-    '/spells/10.jpeg',
-    '/spells/11.jpeg',
-    '/spells/12.jpeg'
+    // '/spells/6.jpeg',
+    // '/spells/7.jpeg',
+    // '/spells/8.jpeg',
+    // '/spells/9.jpeg',
+    // '/spells/10.jpeg',
+    // '/spells/11.jpeg',
+    // '/spells/12.jpeg'
   ]
 
   const tarotImages = [
@@ -56,57 +56,73 @@ const SacredGallery = () => {
     '/vastu_consultation/vc_v_5.mp4'
   ]
 
-  const NumerologyImages = [
-    "numerology/n_v_1.mp4"
+  const mobileNumerologyImages = [
+    "/numerology/n_v_1.mp4"
   ]
 
-  // Gallery data
-  const galleryData = [
+  const numerologyImages = [
+    "/numerology/n_v_1.mp4",
+  ]
 
-    // Spells (12 items)
-    ...spellImages.map((media, index) => ({
-      id: index + 1,
-      title: `SPELLS`,
-      category: "SPELLS",
-      filterCategory: "spells",
-      media: media
-    })),
+  // Gallery data - ordered to match filter categories
+  const galleryData = [
 
     // Tarot Reading (6 items)
     ...tarotImages.map((media, index) => ({
-      id: spellImages.length + index + 1,
+      id: index + 1,
       title: `TAROT READING`,
       category: "TAROT READING",
       filterCategory: "tarot",
       media: media
     })),
 
-    // Vastu Consultation (5 items)
-    ...vastuImages.map((media, index) => ({
-      id: spellImages.length + tarotImages.length + index + 1,
-      title: `VASTU CONSULTATION  `,
-      category: "VASTU CONSULTATION",
-      filterCategory: "vastu consultation",
+    // Mobile Numerology
+    ...mobileNumerologyImages.map((media, index) => ({
+      id: tarotImages.length + index + 1,
+      title: `MOBILE NUMEROLOGY`,
+      category: "MOBILE NUMEROLOGY",
+      filterCategory: "mobile-numerology",
       media: media
     })),
 
-    ...NumerologyImages.map((media, index) => ({
-      id: spellImages.length + tarotImages.length + vastuImages.length + index + 1,
+    // Numerology
+    ...numerologyImages.map((media, index) => ({
+      id: tarotImages.length + mobileNumerologyImages.length + index + 1,
       title: `NUMEROLOGY`,
       category: "NUMEROLOGY",
       filterCategory: "numerology",
       media: media
     })),
 
-    // Other services (keeping as they were)
+    // Angel Healing
     {
-      id: spellImages.length + tarotImages.length + vastuImages.length + NumerologyImages.length + 1,
+      id: tarotImages.length + mobileNumerologyImages.length + numerologyImages.length + 1,
       title: "ANGEL HEALING",
       category: "ANGEL HEALING",
       filterCategory: "angel"
     },
+
+    // Spells (12 items)
+    ...spellImages.map((media, index) => ({
+      id: tarotImages.length + mobileNumerologyImages.length + numerologyImages.length + 1 + index + 1,
+      title: `SPELLS`,
+      category: "SPELLS",
+      filterCategory: "spells",
+      media: media
+    })),
+
+    // Vastu Consultation (5 items)
+    ...vastuImages.map((media, index) => ({
+      id: tarotImages.length + mobileNumerologyImages.length + numerologyImages.length + 1 + spellImages.length + index + 1,
+      title: `VASTU CONSULTATION  `,
+      category: "VASTU CONSULTATION",
+      filterCategory: "vastu consultation",
+      media: media
+    })),
+
+    // Astrology
     {
-      id: spellImages.length + tarotImages.length + vastuImages.length + NumerologyImages.length + 2,
+      id: tarotImages.length + mobileNumerologyImages.length + numerologyImages.length + 1 + spellImages.length + vastuImages.length + 1,
       title: "ASTROLOGY READING",
       category: "ASTROLOGY",
       filterCategory: "astrology"
@@ -116,12 +132,13 @@ const SacredGallery = () => {
   // Filter categories
   const filterCategories = [
     { category: 'all', label: 'All' },
-    { category: 'spells', label: 'Spells' },
     { category: 'tarot', label: 'Tarot Reading' },
-    { category: 'angel', label: 'Angel Healing' },
-    { category: 'vastu consultation', label: 'Vastu Consultation' },
-    { category: 'astrology', label: 'Astrology' },
+    { category: 'mobile-numerology', label: 'Mobile Numerology' },
     { category: 'numerology', label: 'Numerology' },
+    { category: 'angel', label: 'Healings' },
+    { category: 'spells', label: 'Spells' },
+    { category: 'vastu consultation', label: 'Vastu' },
+    { category: 'astrology', label: 'Astrology' },
   ];
 
   // Filter gallery data

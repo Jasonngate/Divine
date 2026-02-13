@@ -98,12 +98,12 @@ const VideoTestimonials = () => {
     <section className="relative overflow-hidden">
       <div className="max-w-3xl mx-auto text-center mb-5 mt-20">
         <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 text-transparent bg-clip-text mb-4">
-          Video Testimonials
+          Featured Reels
         </h1>
         <p className="text-yellow-200 text-lg p-2">
-          Discover the transformative experiences of our clients through their authentic stories.
-          Each testimonial reflects the profound impact of our spiritual healing services.
+          A glimpse into our spiritual journey through curated Instagram reels capturing messages, rituals, and moments that reflect our purpose and practice.
         </p>
+
       </div>
 
       <div className="max-w-full mx-auto">

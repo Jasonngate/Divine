@@ -22,6 +22,9 @@ const cormorant = Cormorant_Garamond({
 export const metadata = {
   title: "Divine Miracle",
   description: "Appointment booking system",
+  icons: {
+    icon: '/logo (1).svg',
+  },
 };
 
 export default function RootLayout({ children }) {
