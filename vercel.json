@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd divine-miracle-frontend && npm install && npm run build",
+  "outputDirectory": "divine-miracle-frontend/.next",
+  "framework": "nextjs"
+}
